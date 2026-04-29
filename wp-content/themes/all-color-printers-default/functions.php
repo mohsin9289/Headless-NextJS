@@ -193,3 +193,91 @@ add_filter( 'acf/the_field/escape_html_optin', '__return_true' );
 
 
 
+
+<?php
+/**
+ * Separate REST API URLs for:
+ * - Global Options
+ * - Header Menu
+ * - Footer Menu
+ * - Site Options
+ *
+ * Add in functions.php
+ */
+ 
+add_action('rest_api_init', function () {
+ 
+    register_rest_route('custom/v1', '/global-options', [
+        'methods'  => 'GET',
+        'callback' => 'api_global_options',
+        'permission_callback' => '__return_true'
+    ]);
+ 
+    register_rest_route('custom/v1', '/header-menu', [
+        'methods'  => 'GET',
+        'callback' => function () {
+            return get_menu_items_by_location('header');
+        },
+        'permission_callback' => '__return_true'
+    ]);
+ 
+    register_rest_route('custom/v1', '/footer-menu', [
+        'methods'  => 'GET',
+        'callback' => function () {
+            return get_menu_items_by_location('footer');
+        },
+        'permission_callback' => '__return_true'
+    ]);
+ 
+    register_rest_route('custom/v1', '/site-options', [
+        'methods'  => 'GET',
+        'callback' => 'api_site_options',
+        'permission_callback' => '__return_true'
+    ]);
+});
+ 
+/* Global Options (ACF Options Page) */
+function api_global_options() {
+    return rest_ensure_response(
+        function_exists('get_fields') ? get_fields('option') : []
+    );
+}
+ 
+/* WordPress Site Options */
+function api_site_options() {
+    return rest_ensure_response([
+        'site_name'        => get_bloginfo('name'),
+        'site_description' => get_bloginfo('description'),
+        'site_url'         => get_site_url(),
+        'admin_email'      => get_option('admin_email'),
+        'timezone'         => get_option('timezone_string'),
+        'language'         => get_locale(),
+    ]);
+}
+ 
+/* Menu Helper */
+function get_menu_items_by_location($location) {
+ 
+    $locations = get_nav_menu_locations();
+ 
+    if (!isset($locations[$location])) {
+        return [];
+    }
+ 
+    $menu_id = $locations[$location];
+    $items   = wp_get_nav_menu_items($menu_id);
+ 
+    $menu = [];
+ 
+    foreach ($items as $item) {
+        $menu[] = [
+            'id'     => $item->ID,
+            'title'  => $item->title,
+            'url'    => $item->url,
+            'parent' => $item->menu_item_parent,
+            'order'  => $item->menu_order
+        ];
+    }
+ 
+    return rest_ensure_response($menu);
+}
