@@ -1,0 +1,125 @@
+// Use this file to overwrite the basic Bootstrap variables and add your own variables
+// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder. 
+// Just copy a variable from /sass/bootstrap/_variables.scss, paste it here and edit the value.
+// As example you find one of the most important Bootstrap variable below: $brand-primary.
+// Thats the ugly Bootstrap blue used for all the links, primary buttons etc.
+// Just add your color code here, compile the theme.scss file to change this color everywhere
+
+
+//Container Width
+$container-width : rem(1158);
+
+// Colors
+$primary: #429CDC;
+$secondary: #FCD307;
+
+$white: #fff;
+$black: #000;
+$blue: #0072bb;
+$light-blue: #10b1d7;
+$medium-blue: #28628F;
+$lighter-blue: #0171bb;
+$dark-blue: #00334D;
+$dark-grey: #212121;
+$medium-gray: #666;
+$medium-md-gray: #6d6d6d;
+$gray: #efefef;
+$light-gray: #f7f7f7;
+$lighter-gray: #EFF4F8;
+$light-gray2:#E6EBF0;
+$orange: #d95000;
+$green: #62A139;
+$off-black: #1C1C1C;
+$dark-blue: #00385F;
+$yellow : #FCD307;
+$magenta : #F21FA4;
+$cyan : #429CDC;
+
+
+//Body Variables
+$body-bg : $white;
+$body-color: $dark-grey;
+
+
+// Link Colors
+$link-color: $black;
+$link-decoration: none;
+$link-hover-color: $magenta;
+$link-hover-decoration: none;
+
+
+// Typography
+$font-family-base: 			  'Work Sans', sans-serif;
+$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+$font-size-lg:                $font-size-base * 1.25 !default;
+$font-size-sm:                $font-size-base * .875 !default;
+
+$font-weight-lighter:         lighter !default;
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-bold:            700 !default;
+$font-weight-bolder:          bolder !default;
+
+$font-weight-base:            $font-weight-normal !default;
+$line-height-base:            1.5625 !default;
+
+$h1-font-size:                $font-size-base * 2.5 !default;
+$h2-font-size:                rem(35) !default;
+$h3-font-size:                rem(24) !default;
+$h4-font-size:                rem(22) !default;
+$h5-font-size:                rem(20) !default;
+$h6-font-size:                $font-size-base !default;
+
+$headings-font-family:        'Montserrat', sans-serif !default;
+$headings-font-weight:        700 !default;
+$headings-line-height:        1.2 !default;
+$headings-color:              $black !default;
+
+$display1-size:               6rem !default;
+$display2-size:               5.5rem !default;
+$display3-size:               4.5rem !default;
+$display4-size:               3.5rem !default;
+
+$display1-weight:             300 !default;
+$display2-weight:             300 !default;
+$display3-weight:             300 !default;
+$display4-weight:             300 !default;
+$display-line-height:         $headings-line-height !default;
+
+$lead-font-size:              $font-size-base * 1.25 !default;
+$lead-font-weight:            300 !default;
+
+$small-font-size:             80% !default;
+
+$blockquote-small-font-size:  $small-font-size !default;
+$blockquote-font-size:        $font-size-base * 1.25 !default;
+
+/*Navigation Variables*/
+$nav-color: $white;
+$nav-hover-color: $yellow;
+$nav-spacing: rem(16.5) rem(20);
+$nav-font-size: rem(18);
+$nav-font-weight: 600;
+
+/*Darkbg color menu variables*/
+$navbar-dark-nav-color: $white;
+$navbar-dark-nav-hover-color: $white;
+
+$nav-subnav-width: rem(250);
+$nav-subnav-radius: 0;
+$nav-subnav-color: $black;
+$nav-subnav-bg-color: $white;
+$nav-subnav-hover-color: $black;
+$nav-subnav-hover-bg-color: $yellow;
+$nav-subnav-font-size: rem(18);
+$nav-subnav-font-weight: 600;
+$nav-subnav-spacing: rem(11) rem(19);
+
+/*============= Navigation Variables Mobile ==========*/
+$nav-spacing-mobile: rem(8.5) rem(50) rem(8.5) rem(30);
+$nav-subnav-spacing-mobile: rem(8.5) rem(50) rem(8.5) rem(60);
+
+/*============= TopLine Menu ==============*/
+$topnav-color: $white;
+$topnav-spacing: 0 rem(20);
+$topnav-font-size: rem(17);

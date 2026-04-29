@@ -1,0 +1,122 @@
+.btn {
+  font-size: rem(18);
+  padding: rem(14) rem(29);
+  white-space: nowrap;
+  @include transition(all 0.3s linear);
+  font-weight: 600;
+  border-radius: 8px;
+  line-height: rem(21);
+
+}
+
+.btn-outline-light {
+  padding: rem(16) rem(59);
+}
+
+.btn-sm {
+  color: $white;
+  padding: rem(11) rem(46.93);
+  font-weight: 600;
+}
+
+.btn-alt {
+  color: $black;
+  display: inline-block;
+  padding: rem(11.5) rem(46.93);
+  background-color: $cyan;
+  border-color: $cyan!important;
+  border: 1px solid;
+  font-weight: 600;
+  @include transition(all 0.3s linear);
+  &:hover
+  {
+    border-color: $black!important;
+    background-color: transparent;
+    color: $black;
+  }
+}
+
+.btn-on-color {
+  display: inline-block;
+  background-color: $primary;
+  color: $black;
+  padding: rem(13.5) rem(55.1);
+  border-radius: 8px;
+  @include transition(all 0.3s linear);
+  &:focus,
+  &:hover {
+    background-color: $light-blue;
+    color: $black;
+  }
+}
+
+.btn-alt-on-color {
+  display: inline-block;
+  padding: rem(11.5) rem(52.1);
+  border: 2px solid $white;
+  background-color: transparent;
+  color: $white;
+  border-radius: 8px;
+  @include transition(all 0.3s linear);
+  &:focus,
+  &:hover {
+    border-color: $white;
+    background-color: $white;
+    color: $black;
+  }
+}
+
+.btn-wrap {
+  margin-bottom: rem(25);
+  @include display(flex);
+  @include flex-wrap(wrap);
+  @include align-items(center);
+  > button,
+  > a {
+    margin: 0 rem(10) rem(20) 0;
+  }
+}
+
+.btn-bg {
+  width: rem(330);
+  /*height: rem(88);*/
+  max-width: 100%;
+  background-color: $dark-grey;
+  padding: rem(12) 0;
+  display: inline-block;
+  text-align: center;
+  margin-bottom: rem(25);
+  vertical-align: top;
+  &.red-btn-bg {
+    background-color: $dark-grey;
+  }
+  &:nth-of-type(2) {
+    padding-top: rem(19);
+  }
+  @include media-breakpoint-up(lg) {
+    margin: 0 rem(15) rem(20) 0;
+  }
+  a{
+    margin: 5px;
+  }
+}
+
+
+.btn-primary {
+  background-color: $magenta;
+  border-color: $magenta;
+  //color: $white;
+  color: $black;
+  @include transition(all 0.3s linear);
+  &:hover, &:focus{
+    background-color: $yellow;
+  border-color: $yellow;
+  color: $black;
+  }
+}
+.btn-success, .btn-info{
+  color: $black;
+  &:hover, &:focus{
+    color: $black;
+    }
+}
